@@ -18,6 +18,8 @@ try {
     composeOptions: utils.parseFlags(core.getInput("compose-flags")),
     commandOptions: utils.parseFlags(core.getInput("up-flags")),
   };
+  
+  const [serv, command] = utils.parseExec(core.getInput("exec"))
 
   const promise =
     services.length > 0
@@ -27,6 +29,9 @@ try {
   promise
     .then(() => {
       console.log("compose started");
+      if (serv !== "" && command !== "") {
+        compose.exec(serv, command)
+      }
     })
     .catch((err) => {
       core.setFailed(`compose up failed ${JSON.stringify(err)}`);
