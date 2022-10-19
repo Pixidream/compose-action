@@ -22,3 +22,7 @@ module.exports.parseComposeFiles = (composeFiles) => {
     return true;
   });
 };
+
+module.exports.parseExec = (command) => {
+  return command.split(":"); 
+}
