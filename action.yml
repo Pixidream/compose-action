@@ -21,7 +21,7 @@ inputs:
     required: false
     default: ""
   exec:
-    description: "command to execute in the compose"
+    description: "command to execute in the compose 'container:command args'"
     required: false
     default: ""
 runs:
