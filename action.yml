@@ -20,6 +20,10 @@ inputs:
     description: "additional options to pass to `docker-compose up` command"
     required: false
     default: ""
+  exec:
+    description: "command to execute in the compose"
+    required: false
+    default: ""
 runs:
   using: "node12"
   main: "main.js"
